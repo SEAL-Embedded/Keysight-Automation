@@ -1,7 +1,8 @@
 # Hudson Wong
 # This code snippet generates gain-frequency and phase-frequency bode plots for a sweep of frequency values.
 # Functionally, the logic is the same as the WFM_Automation, but several updates were made. This was put in a new file 
-# to preserve the functionality of both programs in case of bugs. 
+# to preserve the functionality of both programs in case of bugs. This will require more testing before full functionality 
+# is achieved. 
 
 # NOTE: the default pyvisa import works well for Python 3.6+
 # if you are working with python version lower than 3.6, use 'import visa' instead of import pyvisa as visa
@@ -121,17 +122,17 @@ rm.close()
 # freq_out_sliced = freq_out[:6]
 # dB_sliced = dB[:6]
 
-# Plot the first graph
+# Plot the first graph in logarithmic scale
 plt.figure(1)
 #plt.scatter(freq_out, dB, marker='o', color='blue', label='Scatter Plot') #scatter plot code
 plt.plot(freq_out, dB)
-plt.xscale('log')
+plt.xscale('log') 
 plt.title('Graph 1: Gain-frequency')
 plt.xlabel('frequency')
 plt.ylabel('Gain (dB)')
 plt.legend()
 
-# Plot the second graph
+# Plot the second graph in logarithmic scale
 plt.figure(2)
 # plt.scatter(freq_out, phase_diff, marker='o', color='blue', label='Scatter Plot') #scatter plot code
 plt.plot(freq_out, phase_diff)
