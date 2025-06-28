@@ -34,7 +34,6 @@ def frequencyValues(power0, power1, points):
     # Return result
     return result
 
-vals = frequencyValues(1, 4, 10)
 # print(vals)
 rm = visa.ResourceManager()
 scope = rm.open_resource(scope_address)
@@ -57,6 +56,13 @@ fg.write(':OUTPut:LOAD %s' % ('INFinity'))  # Sets the function generator to hig
 freq_out = np.empty(0)
 v_out = np.empty(0)
 phase_diff = np.empty(0)
+
+lower_bound = int(input("Enter the lower bound frequency power0, where 10^power0 is the lower bound of frequencies:"))
+upper_bound = int(input("Enter the upper bound frequency power1, where 10^power1 is the upper bound of frequencies:"))
+no_of_points = int(input("Enter the number of measured points per decade:"))
+
+vals = frequencyValues(lower_bound, upper_bound, no_of_points)
+
 v_ref = float(input("Enter your reference/input voltage: "))    # Gets the reference voltage for gain calculation
 print("Running... please wait")
 
