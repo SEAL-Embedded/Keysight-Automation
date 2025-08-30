@@ -4,10 +4,17 @@
 # to preserve the functionality of both programs in case of bugs. This will require more testing before full functionality 
 # is achieved. 
 
+#IMPROVEMENTS:
+# Run on single oscilloscope without using a separate function generator. 
+# Reach out to Ryan or MingCheng about this. We need to put it into a bigger program with a graphic UI. Is there a possibility to integrate this 
+# into a better UI? Such that you only need to press a few buttons and it runs, and it is more portable, no need for calibration. 
+# Test out the CSV files and logarithmic graph
+
 # NOTE: the default pyvisa import works well for Python 3.6+
 # if you are working with python version lower than 3.6, use 'import visa' instead of import pyvisa as visa
 # For all unknown string text arguments in query(), write() or similar functions,
 # go check corresponding machine's Command Expert for details (copy and past the string to search)
+#
 
 import pyvisa as visa
 import time
